@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import Country from './Country';
+import Card from './Card';
 
 function Input() {
 
 	const [contiant, setContiant] = useState([])
 	const [select, setSelect] = useState("");
 	const [countries, setCountries] = useState([]);
+	const [actifCountry, setActifCountry] = useState([false, []]);
 
 	useEffect(() => {
 		const url = "https://restcountries.com/v3.1/all";
@@ -17,8 +19,8 @@ function Input() {
 	}, [contiant]);
 
 
-
 	const searchApi = (event) => {
+		setActifCountry([false, []])
 		setSelect(event.target.value)
 		fetch(`https://restcountries.com/v3.1/region/${event.target.value}`)
 			.then(reponse => reponse.json()
@@ -30,6 +32,8 @@ function Input() {
 	}
 
 	const searchBar = (event) => {
+		setActifCountry([false, []])
+
 		setSelect(event.target.value)
 		fetch(`https://restcountries.com/v3.1/name/${event.target.value}`)
 			.then(reponse => reponse.json()
@@ -38,6 +42,12 @@ function Input() {
 					setCountries(result)
 				}
 				))
+	}
+
+	const openFlag = (country)=>{
+		setActifCountry([true, country])
+		console.log(actifCountry)
+
 	}
 	return (
 		<section className="input-continent">
@@ -55,10 +65,13 @@ function Input() {
 			</div>
 
 			{
+				actifCountry[0]?
+					<Card data = {actifCountry[1]}/>:
 				countries.length > 0 ?
-					<Country countries={countries} />
-					: <p className="messagError">Il y aucun resultat pour la recherche "{select}"</p>
+					<Country openFlag = {openFlag}countries={countries} />:
+				<p className="messagError">Il y aucun resultat pour la recherche "{select}"</p>
 			}
+
 		</section>
 	) 
 }

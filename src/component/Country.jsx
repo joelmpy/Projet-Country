@@ -1,13 +1,15 @@
 import "../App.css";
 
 function Country(props) {
-    
+    const openCountry= (country)=>{
+        props.openFlag(country)
+    }
     return (
         <section className="grid">
             {props.countries.map((country) => {
                 const { population, name, capital, region, flags } = country;
                 return (
-                    <article className="card">
+                    <article className="card" onClick={()=>{openCountry(country)}}>
                             <h3>{name.common}</h3>
                         <div  className="card-detail">
                             <img src={flags.png}></img>
