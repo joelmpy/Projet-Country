@@ -8,7 +8,7 @@ function Card(props) {
           <h4>
             <span
               className="material-icons"
-              style={{ height: "100xpx", marginRight: "10px" }}
+              style={{ fontSize: "15px", marginRight: "10px" }}
             >
               public
             </span>
@@ -17,7 +17,7 @@ function Card(props) {
           <h4>
             <span
               class="material-icons"
-              style={{ height: "100xpx", marginRight: "10px" }}
+              style={{ fontSize: "15px", marginRight: "10px" }}
             >
               flag
             </span>
@@ -26,7 +26,7 @@ function Card(props) {
           <h4>
             <span
               class="material-icons"
-              style={{ height: "100xpx", marginRight: "10px" }}
+              style={{ fontSize: "15px", marginRight: "10px" }}
             >
               person
             </span>
@@ -44,7 +44,7 @@ function Card(props) {
           <h4>
             <span
               class="material-icons"
-              style={{ height: "100xpx", marginRight: "10px" }}
+              style={{fontSize: "15px", marginRight: "10px" }}
             >
               flag
             </span>
@@ -53,7 +53,7 @@ function Card(props) {
           <h4>
             <span
               class="material-icons"
-              style={{ height: "100xpx", marginRight: "10px" }}
+              style={{ fontSize: "15px", marginRight: "10px" }}
             >
               translate
             </span>
@@ -64,13 +64,6 @@ function Card(props) {
                 return key + " ";
               })}
             </span>
-          </h4>
-
-          <h4>
-            <iframe className="maps"
-              src={props.data.maps.googleMaps}
-             
-            ></iframe>
           </h4>
         </div>
       </div>
