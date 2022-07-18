@@ -52,7 +52,7 @@ function Input() {
 	return (
 		<section className="input-continent">
 			<div className="input-top">
-			<input onChange={searchBar} type="text" placeholder="Exemple : France" />
+			<input onChange={searchBar} type="text" placeholder="Exemple : Spain" />
 			<div className="select-continent">
 				<select onChange={searchApi}>
 					<option value="Africa">Afrique</option>
