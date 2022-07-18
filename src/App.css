@@ -1,5 +1,7 @@
 :root {
-  --dark-bg-color: hsl(207, 26%, 17%);
+  /* #FEFEDF */
+  /* hsl(207, 26%, 17%); */
+  --dark-bg-color:hsl(207, 26%, 17%); 
   --text-color: hsl(0, 0%, 100%);
 }
 
@@ -204,6 +206,11 @@ font-size: 0.8rem;
 
 .cards-details .material-icons{
   height: 40px;
+}
+.cards .maps {
+    width: 600px;
+    height: 450px;
+    border: 0;
 }
 
 
